@@ -29,7 +29,7 @@ The Movie App leverages a range of dependencies to provide its functionality and
 
 ### API Integration
 
-- **[The Movie Database (TMDb) API](https://developer.themoviedb.org/docs/getting-started)**: The app fetches movie data from the TMDb API. An API key is required to access the data. Follow this link to get API key: https://developer.themoviedb.org/docs/getting-started, **create** **API KEY** and add it to '.env.local' variable.
+- **[The Movie Database (TMDb) API](https://developer.themoviedb.org/docs/getting-started)**: The app fetches movie data from the TMDb API. An API key is required to access the data. Follow this link to get API key: https://developer.themoviedb.org/docs/getting-started, **create** **API KEY** and add it to '.env.local' variable in root directory.
 
 ### Development and Build Tools
 
