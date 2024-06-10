@@ -10,6 +10,10 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+## Create .env.local
+
+- Add API for app from https://developer.themoviedb.org/docs/getting-started
+
 ## Project Setup
 
 ```sh
