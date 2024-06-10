@@ -63,9 +63,6 @@ const useTopRatedStore = defineStore('useTopRatedStore', {
         this.filteredMovies = this.topRated.filter(movie =>
           movie.genre_ids.includes(Number(genreId))
         );
-        if (genreId === 'all') {
-          this.getMovies();
-        }
       } else {
         this.filteredMovies = this.topRated;
       }

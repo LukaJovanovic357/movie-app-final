@@ -2,7 +2,7 @@
   <main>
     <!-- filter component -->
     <div class="w-full mx-auto px-12 md:px-20 lg:px-28">
-      <div class="genre-select mt-5 mx-auto">
+      <div v-if="!isLoading" class="genre-select mt-5 mx-auto">
         <select
           class="text-gray-900 rounded-md"
           id="genre"
@@ -108,7 +108,7 @@ import { usePopularMoviesStore } from '../stores/usePopularMoviesStore';
 const topRatedStore = useTopRatedStore();
 topRatedStore.getMovies();
 const popularMovieStore = usePopularMoviesStore();
-popularMovieStore.getGenres();
+// popularMovieStore.getGenres();
 const { findGenres } = popularMovieStore;
 
 const goToNextPage = topRatedStore.goToNextPage;
@@ -121,12 +121,19 @@ const lastPage = computed(() => topRatedStore.totalPages);
 
 const filteredMovies = computed(() => topRatedStore.filteredMovies);
 const genres = ref(popularMovieStore.genres);
+const isLoading = ref('false');
 
-const selectedGenre = ref<number | string>('all');
+const loadGenres = async () => {
+  await popularMovieStore.getGenres();
+  genres.value = popularMovieStore.genres;
+  isLoading.value = false;
+};
 
 const filterMovies = () => {
   topRatedStore.filterMoviesByGenre(selectedGenre.value);
 };
+
+const selectedGenre = ref<number | string>('all');
 
 watch(selectedGenre, (newValue, oldValue) => {
   if (newValue !== oldValue) {
@@ -134,7 +141,8 @@ watch(selectedGenre, (newValue, oldValue) => {
   }
 });
 
-onMounted(() => {
+onMounted(async () => {
+  await loadGenres();
   topRatedStore.initializePage();
 });
 </script>
