@@ -1,7 +1,7 @@
 <template>
   <div v-if="movie">
     <div
-      class="w-screen h-screen bg-center bg-cover"
+      class="w-full h-screen bg-center bg-cover"
       :style="{
         backgroundImage: `url(${getImage(movie.backdrop_path)})`
       }"

@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full text-xl ml-2 md:top-4 flex z-10 text-white items-center md:gap-20 md:px-4 py-4 bg-transparent border-b-2 border-neutral-600"
+    class="w-90 text-xl md:top-4 flex z-10 text-white items-center md:gap-20 md:px-4 py-4 bg-transparent border-b-2 border-neutral-600"
   >
     <div @click="goToHomepage" class="flex items-center text-3xl font-bold gap-2 cursor-pointer">
       <Icon icon="mingcute:movie-line" width="40" class="hidden cursor-pointer md:block" />
@@ -38,6 +38,10 @@ function goToHomepage() {
 </script>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
+
 .nav-route {
   transition: background-color 0.3s, text-shadow 0.3s;
 }
